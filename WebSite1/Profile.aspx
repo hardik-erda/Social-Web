@@ -6,9 +6,7 @@
     <div class="container mt-5 ms-auto">
         <div class="card border-primary">
             <div class="card-header fs-1">
-                <%--<svg height="180" width="180">
-                    <circle cx="85" cy="85" r="80" stroke="black" stroke-width="3" fill="gray" />
-                </svg>--%>
+                
                 <asp:image id="img_profile" imageurl="~/ProfilePics/admin_iron-man-superhero-minimal-4k-1t.jpg" runat="server" cssclass="rounded-circle" width="180" height="180" />
                 <asp:label id="lb_pname" runat="server" />
                 <button runat="server" onserverclick="editPname_ServerClick" id="editPname" class="btn btn-secondary"><i class="bi bi-pencil-fill">Edit</i></button>
@@ -17,12 +15,9 @@
                     <asp:TextBox ID ="tb_updatedUser" runat="server" Font-Size="16"/>
                     <asp:Button ID="btn_update" runat="server" OnClick="btn_update_click" Text="Update" CssClass="btn btn-primary"/>
                     <br />
-                     <asp:FileUpload ID="fu_profile" runat="server" Font-Size="16" accept=".png,.jpg,.jpeg,.gif"/>
+                     <asp:FileUpload ID="fu_profile" runat="server" Font-Size="16" accept=".png,.jpg,.jpeg,.gif" />
                     <asp:Button ID="btn_updatePic" runat="server" Text="Upload pic" OnClick="btn_updatePic_Click" CssClass="btn btn-primary"/>
                 </asp:panel>
-
-
-
             </div>
 
 
@@ -32,7 +27,7 @@
                         <div class="card-body">
                             <h4 class="card-title text-center fs-1" runat="server" id="lb_countFollowers">250K</h4>
                         </div>
-                        <div class="card-header fs-3 bg-primary text-white text-center">Followers</div>
+                        <button runat="server" onserverclick="btn_Followers_ServerClick" id="btn_Followers" class="card-header fs-3 bg-primary text-white text-center">Followers</button>
                     </div>
                 </div>
 
@@ -41,7 +36,8 @@
                         <div class="card-body">
                             <h4 class="card-title text-center fs-1" runat="server" id="lb_countFollowing">100K</h4>
                         </div>
-                        <div class="card-header fs-3 bg-primary text-white text-center">Following</div>
+                        <%--<div class="card-header fs-3 bg-primary text-white text-center">Following</div>--%>
+                        <button runat="server" onserverclick="btn_Followers_ServerClick" id="btn_Following" class="card-header fs-3 bg-primary text-white text-center">Following</button>
                     </div>
                 </div>
                 <div class="col">
@@ -76,8 +72,8 @@
                 <button  class="btn btn-outline-primary" runat="server" onserverclick="Unnamed_ServerClick">
                     <i class="bi bi-hand-thumbs-up-fill"></i>Like</button>
 
-            </div>
-        </div>--%>
+            </div>--%>
+        </div>
             <asp:Panel runat="server" ID="pan_posts" />
 </asp:Content>
 

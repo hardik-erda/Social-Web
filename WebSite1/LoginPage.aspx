@@ -19,7 +19,7 @@
                     <label class="form-label">Password</label>
                     <asp:TextBox ID="tb_password" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                     <asp:button class="btn btn-primary mt-3" runat="server" type="submit" id="btn_login" Text="Login" OnClick="btn_login_Click"></asp:button><br/>
-                    <a href="SignUpPage.aspx"  class="text-secondary ">Create a new account</a>
+                    <a href="SignUpPage.aspx"  class="text-secondary ">Create a new account</a><br />
                     <asp:Label ID="lb_msg" ForeColor="Red" runat="server"></asp:Label>
                     </form>
             </div>
