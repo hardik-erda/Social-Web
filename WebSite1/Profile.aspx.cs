@@ -207,4 +207,9 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("FollowersList.aspx");
     }
+
+    protected void btn_Following_ServerClick(object sender, EventArgs e)
+    {
+        Response.Redirect("FollowingList.aspx");
+    }
 }
