@@ -37,7 +37,8 @@
                             <h4 class="card-title text-center fs-1" runat="server" id="lb_countFollowing">100K</h4>
                         </div>
                         <%--<div class="card-header fs-3 bg-primary text-white text-center">Following</div>--%>
-                        <button runat="server" onserverclick="btn_Followers_ServerClick" id="btn_Following" class="card-header fs-3 bg-primary text-white text-center">Following</button>
+                        <%--<button runat="server" onserverclick="btn_Following_ServerClick" id="btn_Following" class="card-header fs-3 bg-primary text-white text-center">Following</button>--%>
+                        <asp:LinkButton OnClick="btn_Following_ServerClick" ID="btn_Following" class="card-header fs-3 bg-primary text-white text-center text-decoration-none" runat="server" Text="Following"></asp:LinkButton>
                     </div>
                 </div>
                 <div class="col">
