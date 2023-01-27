@@ -36,7 +36,7 @@ public partial class SignUpPage : System.Web.UI.Page
                 String temp_imgurl = "ProfilePics/" + Session["Uid"] + ext;
                 try
                 {
-                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
                 String que = "insert into Users(UserName,Password,ProfileImg) values(@user,@pass,@img)";
@@ -54,5 +54,15 @@ public partial class SignUpPage : System.Web.UI.Page
             }
 
         }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btn_login_Click(object sender, EventArgs e)
+    {
+
     }
 }
