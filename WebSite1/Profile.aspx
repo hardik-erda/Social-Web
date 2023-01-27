@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <section>
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center h-100">
@@ -49,10 +50,13 @@
                                 <asp:Button ID="Button5" runat="server" Text="Upload pic" OnClick="btn_updatePic_Click" CssClass="btn btn-primary" />
                             </asp:Panel>
                         </div>
+
                     </div>
                 </div>
             </div>
     <asp:Panel runat="server" ID="pan_posts" />
         </div>
+
     </section>
+
 </asp:Content>

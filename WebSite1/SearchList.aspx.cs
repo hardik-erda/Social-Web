@@ -107,7 +107,7 @@ public partial class SearchList : System.Web.UI.Page
                 String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
-                String que = "delete from Friends where uid="+Session["uid"]+" and FollowingId="+bid;
+                String que = "delete from Friends where uid="+bid+" and FollowingId="+ Session["uid"];
                 SqlCommand cmd = new SqlCommand(que, con);
                 cmd.ExecuteNonQuery();
                 Response.Redirect("Profile.aspx");

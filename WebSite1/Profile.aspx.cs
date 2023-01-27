@@ -13,11 +13,11 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //use sender obj to check btn click even
-        if (IsPostBack)
-        {
-            object ctrl = Request.Params["__EVENTTARGET"];
-            Response.Write(ctrl.ToString());
-        }
+        //if (IsPostBack)
+        //{
+        //    object ctrl = Request.Params["__EVENTTARGET"];
+        //    Response.Write(ctrl.ToString());
+        //}
 
         if (Session["user"] == null)
         {
@@ -85,7 +85,7 @@ public partial class _Default : System.Web.UI.Page
                 HtmlGenericControl h5 = new HtmlGenericControl("h5");
                 HtmlGenericControl img = new HtmlGenericControl("img");
                 HtmlGenericControl p = new HtmlGenericControl("p");
-                div.Attributes.Add("class", "card mb-5 border-primary w-50 mt-5    ");
+                div.Attributes.Add("class", "card mb-5 border-primary w-50 mt-5  mx-auto  ");
                 h3.Attributes.Add("class", "card-header");
                 h3.InnerText = user;
                 div.Controls.Add(h3);
@@ -201,5 +201,15 @@ public partial class _Default : System.Web.UI.Page
                 Response.Write("update Failed " + ex);
             }
         }
+    }
+
+    protected void btn_Followers_ServerClick(object sender, EventArgs e)
+    {
+        Response.Redirect("FollowersList.aspx");
+    }
+
+    protected void btn_Following_ServerClick(object sender, EventArgs e)
+    {
+        Response.Redirect("FollowingList.aspx");
     }
 }
