@@ -34,7 +34,7 @@ public partial class AddNewPost : System.Web.UI.Page
                 String temp_imgurl = "PostImg/" + Session["Uid"] +"_"+fu_post.FileName;
                 try
                 {
-                    String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+                    String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
                     SqlConnection con = new SqlConnection(constr);
                     con.Open();
                     String que = "insert into Posts(Uid,PostTitle,PostImg,PostDes,PostLikes) values(@uid,@title,@img,@des,0)";

@@ -25,7 +25,7 @@ public partial class _Default : System.Web.UI.Page
         }
         lb_pname.Text = Session["user"].ToString();
 
-        String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+        String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
         SqlConnection con = new SqlConnection(constr);
         con.Open();
 

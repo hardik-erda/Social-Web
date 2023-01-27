@@ -6,27 +6,70 @@
 <head runat="server">
     <title></title>
     <link href="StyleSheet.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+    ></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
 </head>
 <body>
-   <div class="container d-flex justify-content-center align-items-center">
-        <div class="card border-primary mb-3 " style="max-width: 20rem;">
-            <div class="card-header">Sign Up</div>
-            <div class="card-body">
-                <form runat="server" >
-                    <label class="form-label" >Enter Username</label>
-                    <asp:TextBox ID="tb_username" runat="server" class="form-control"></asp:TextBox>
-                    <label class="form-label">Create new Password</label>
-                    <asp:TextBox ID="tb_password" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
-                    <label class="form-label">Profile Image: </label>
-                    <asp:FileUpload ID="fu_profile" runat="server"  accept=".png,.jpg,.jpeg,.gif"/>
-                    <asp:button class="btn btn-primary mt-3" runat="server" type="submit" id="btn_signUp" Text="Sign up" OnClick="btn_signUp_Click"></asp:button><br/>
-                    <a href="LoginPage.aspx"  class="text-secondary ">Already have account?</a><br />
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-5-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5">
+                
+                <div class="text-center">
+                    <h3 class="mb-5">Sign Up</h3>
+                </div>
+                <form runat="server">
+
+                    <div class="form mb-4">
+                      <label class="form-label" for="tb_username">Enter Username:</label>
+                      <asp:TextBox ID="tb_username" runat="server" class="form-control"></asp:TextBox>  
+                    </div>
+
+                    <div class="form mb-4">
+                      <label class="form-label" for="typePasswordX-2">Create new Password:</label>
+                      <asp:TextBox ID="tb_password" runat="server" class="form-control"></asp:TextBox>  
+                    </div>
+
+                    <div class="form mb-5">
+                      <label class="form-label" for="typePasswordX-2">Profile Image:</label>
+                      <asp:FileUpload ID="fu_profile" runat="server"  accept=".png,.jpg,.jpeg,.gif"/>
+                    </div>
+
+                    <asp:button class="btn btn-primary btn-lg btn-block" runat="server" type="submit" id="btn_login" Text="Sign Up" OnClick="btn_login_Click"></asp:button>
+                    <asp:Button ID="Button1" runat="server" Text="Button"  OnClick="Button1_Click"/>
+                    <div class="mt-4 text-center">
+                      <p class="mb-0">Already have an account? <a href="LoginPage.aspx" class="fw-bold" runat="server">Login</a>
+                      </p>
+                    </div>
                     <asp:Label ID="lb_msg" ForeColor="Red" runat="server"></asp:Label>
-                    </form>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      </div>
+    </section>
 </body>
 </html>

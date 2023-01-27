@@ -5,50 +5,71 @@
 <html>
 <head runat="server">
     <title>Social Web</title>
-    <link href="StyleSheet.css" rel="stylesheet" />
+   
+    <link href="App_Themes/StyleSheet.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-      <form runat="server">
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-lg-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="dashboard.aspx">Social Web</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      
-          <div class="navbar-nav ms-auto">
-        <input class="form-control me-sm-2 w-100" type="text" placeholder="Find new Friends" runat="server" id="tb_search">
-        <button class="btn btn-secondary " runat="server" id="btn_search" onserverclick="btn_search_ServerClick">Find</button>
-          </div>
+    <form runat="server">
+        <div>
+            <%--<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-lg-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="dashboard.aspx">Social Web</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>       
+                    <div class="navbar-collapse collapse show" id="navbarColor01">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="AddNewPost.aspx">Add new Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="Profile.aspx">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="myid" runat="server" OnClick="Logout_ServerClick" Text="LogOut" CssClass="nav-link link-light" />
+                            </li>
+                        </ul>
+                        <div class="navbar-nav ms-auto">
+                            <input class="form-control me-sm-2 w-100" type="text" placeholder="Find new Friends" runat="server" id="tb_search">
+                            <button class="btn btn-secondary " runat="server" id="btn_search" onserverclick="btn_search_ServerClick">Find</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>--%>
 
-      
-      <ul class="navbar-nav ms-auto me-0 ">
-        <li class="nav-item">
-          <a class="nav-link link-light" href="AddNewPost.aspx">Add new Post</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link link-light" href="Profile.aspx">Profile</a>
-        </li>
-        <li class="nav-item">
-            
-                <asp:LinkButton id="myid" runat="server" OnClick="Logout_ServerClick" Text="LogOut" CssClass="nav-link link-light"/>
-        
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-      </form>
-    
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Social Web</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse show" id="navbarColor01" style="">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="AddNewPost.aspx">Add new Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Profile.aspx">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Logout_ServerClick" Text="LogOut" CssClass="nav-link link-light" />
+                            </li>
+                        </ul>
+                        <div class="d-flex">
+                            <input class="form-control me-sm-2" type="search" placeholder="Find new Friends" runat="server" id="tb_search">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit" runat="server" id="btn_search" onserverclick="btn_search_ServerClick">Find</button>
+                        </div> 
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
