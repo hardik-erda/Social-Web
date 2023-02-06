@@ -20,7 +20,7 @@ public partial class dashboard : System.Web.UI.Page
         
         SqlConnection con = new SqlConnection(constr);
         con.Open();
-        string que = "Select P.Uid,P.Pid,P.PostTitle,P.PostImg,P.PostDes,P.PostLikes,U.UserId,U.UserName from Posts as P,Users as U where P.Uid !=" + Session["Uid"] + "AND U.UserId = P.Uid ORDER BY P.Pid DESC";
+        string que = "Select P.Uid,P.Pid,P.PostTitle,P.PostImg,P.PostDes,P.PostLikes,U.UserId,U.UserName from Posts as P,Users as U where P.Uid in(select FollowingId from Friends where uid=" + Session["uid"] +") AND U.UserId = P.Uid ORDER BY P.Pid DESC";
         SqlCommand cmd = new SqlCommand(que, con);
 
         SqlDataReader reader = cmd.ExecuteReader();
@@ -51,7 +51,7 @@ public partial class dashboard : System.Web.UI.Page
         HtmlGenericControl h5 = new HtmlGenericControl("h5");
         HtmlGenericControl img = new HtmlGenericControl("img");
         HtmlGenericControl p = new HtmlGenericControl("p");
-        div.Attributes.Add("class", "card mb-5 border-primary w-80 mt-5    ");
+        div.Attributes.Add("class", "card mb-5 border-dark w-80 mt-5    ");
         h3.Attributes.Add("class", "card-header");
         h3.InnerText = user;
         div.Controls.Add(h3);
@@ -75,7 +75,7 @@ public partial class dashboard : System.Web.UI.Page
         Button btnLike = new Button();
         btnLike.ID = "btnLike_" + pid;
         btnLike.Text = "\uD83D\uDC4D Like";
-        btnLike.CssClass = "btn btn-outline-primary ";
+        btnLike.CssClass = "btn btn-outline-dark ";
         btnLike.Click += new System.EventHandler(btnLike_click);
         div_cardBody3.Controls.Add(btnLike);
         pan_posts.Controls.Add(div);
@@ -95,7 +95,7 @@ public partial class dashboard : System.Web.UI.Page
                 String que = "update Posts set PostLikes=PostLikes+1 where Pid =" + bid;
                 SqlCommand cmd = new SqlCommand(que, con);
                 cmd.ExecuteNonQuery();
-                Response.Redirect("dashboard.aspx");
+                //Response.Redirect("dashboard.aspx");
 
             }
             catch (Exception ex)

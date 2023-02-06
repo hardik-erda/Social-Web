@@ -55,7 +55,7 @@
 
                     
 
-                    <asp:button class="btn btn-primary btn-lg btn-block" runat="server" type="submit" id="btn_login" Text="Login" OnClick="btn_login_Click"></asp:button>
+                    <asp:button class="btn btn-dark btn-lg btn-block" runat="server" type="submit" id="btn_login" Text="Login" OnClick="btn_login_Click"></asp:button>
          
                     <div class="mt-4 text-center">
                       <p class="mb-0">Don't have an account? <a href="SignUpPage.aspx" class="fw-bold" runat="server">Sign Up</a>

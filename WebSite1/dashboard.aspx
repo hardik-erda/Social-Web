@@ -4,10 +4,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<div class="container mt-5 w-50">
     
-    <asp:Panel ID="pan_posts" runat="server" />
+    <asp:ScriptManager ID="SM_post" runat="server" />
+    <asp:UpdatePanel ID="UP_SM_post" runat="server">
+        <ContentTemplate>
+    <div class="container mt-5 w-50" id="pan_posts" runat="server">
+                <%--<asp:Panel ID="pan_posts" runat="server" />--%>
     </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
 </asp:Content>
 

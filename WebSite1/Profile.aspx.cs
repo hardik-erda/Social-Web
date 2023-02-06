@@ -58,7 +58,6 @@ public partial class _Default : System.Web.UI.Page
         while (reader.Read())
         {
             Session["ProfileImg"] = reader["ProfileImg"];
-            Response.Write(Session["ProfileImg"]);
             img_profile.ImageUrl = reader["ProfileImg"].ToString();
         }
         reader.Close();
@@ -88,7 +87,7 @@ public partial class _Default : System.Web.UI.Page
                 HtmlGenericControl h5 = new HtmlGenericControl("h5");
                 HtmlGenericControl img = new HtmlGenericControl("img");
                 HtmlGenericControl p = new HtmlGenericControl("p");
-                div.Attributes.Add("class", "card mb-5 border-primary w-50 mt-5  mx-auto  ");
+                div.Attributes.Add("class", "card mb-5 border-dark w-50 mt-5  mx-auto  ");
                 h3.Attributes.Add("class", "card-header");
                 h3.InnerText = user;
                 div.Controls.Add(h3);
@@ -112,7 +111,7 @@ public partial class _Default : System.Web.UI.Page
         Button btnLike = new Button();
         btnLike.ID = "btnLike_"+pid;
         btnLike.Text = "\uD83D\uDC4D Like";
-        btnLike.CssClass = "btn btn-outline-primary ";
+        btnLike.CssClass = "btn btn-outline-dark ";
         btnLike.Click += new System.EventHandler(btnLike_click);
                 div_cardBody3.Controls.Add(btnLike);
                 pan_posts.Controls.Add(div);

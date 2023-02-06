@@ -41,7 +41,7 @@ public partial class FollowingList : System.Web.UI.Page
 
     
 
-        div.Attributes.Add("class", "card mb-5 border-primary mt-5 p-2 ms-5 ");
+        div.Attributes.Add("class", "card mb-5 border-dark mt-5 p-2 ms-5 ");
         div2.Attributes.Add("class", "d-flex");
         lable.Attributes.Add("class", "align-self-center m-auto h2");
         lable.InnerText = username;
@@ -51,8 +51,8 @@ public partial class FollowingList : System.Web.UI.Page
         img.Height = 120;
         Button btnLike = new Button();
         btnLike.ID = "btnFollow_"+fid;
-        btnLike.Text = "Unfollow";
-        btnLike.CssClass = "btn btn-secondary ";
+        btnLike.Text = "Remove";
+        btnLike.CssClass = "btn btn-outline-danger mt-3";
         btnLike.Click += new System.EventHandler(btnUnfollow_click);
 
         div2.Controls.Add(img);

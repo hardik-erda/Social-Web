@@ -10,7 +10,7 @@
         <asp:FileUpload runat="server" ID="fu_postImg" CssClass="form-control mb-3" />
         <label>Post Description</label>
         <asp:TextBox runat="server" ID="tb_postDes" CssClass="form-control mb-3" />
-        <asp:Button runat="server" ID="btn_submit" CssClass="btn btn-primary" Text="Submit" OnClick="btn_submit_Click"/>
+        <asp:Button runat="server" ID="btn_submit" CssClass="btn btn-dark" Text="Submit" OnClick="btn_submit_Click"/>
     </div>
 </asp:Content>
 

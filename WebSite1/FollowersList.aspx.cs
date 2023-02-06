@@ -38,7 +38,7 @@ public partial class FollowersList : System.Web.UI.Page
         //HtmlGenericControl img = new HtmlGenericControl("img");
         Image img = new Image();
         
-        div.Attributes.Add("class", "card mb-5 border-primary mt-5 p-2 ms-5 ");
+        div.Attributes.Add("class", "card mb-5 border-dark mt-5 p-2 ms-5 ");
         div2.Attributes.Add("class", "d-flex");
         lable.Attributes.Add("class", "align-self-center m-auto h2");
         lable.InnerText = username;
@@ -57,7 +57,7 @@ public partial class FollowersList : System.Web.UI.Page
         //else
         //{
         //    btnLike.Text = "+ Follow";
-        //    btnLike.CssClass = "btn btn-outline-primary ";
+        //    btnLike.CssClass = "btn btn-outline-dark ";
         //    btnLike.Click += new System.EventHandler(btnFollow_click);
         //}
         div2.Controls.Add(img);

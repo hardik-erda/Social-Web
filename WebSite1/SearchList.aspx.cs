@@ -51,7 +51,7 @@ public partial class SearchList : System.Web.UI.Page
     {
         HtmlGenericControl div = new HtmlGenericControl("div");
         HtmlGenericControl lable = new HtmlGenericControl("lable");
-        div.Attributes.Add("class", "card mb-5 border-primary w-50 mt-5 p-2 ms-5");
+        div.Attributes.Add("class", "card mb-5 border-dark w-50 mt-5 p-2 ms-5");
         lable.Attributes.Add("class", "card-header");
         lable.InnerText = username;
         Button btnLike = new Button();
@@ -59,7 +59,7 @@ public partial class SearchList : System.Web.UI.Page
         if (state_follow)
         {
             btnLike.Text = "Unfollow";
-            btnLike.CssClass = "btn btn-outline-secondary ";
+            btnLike.CssClass = "btn btn-outline-danger ";
             btnLike.Click += new System.EventHandler(btnUnfollow_click);
         }
         else
