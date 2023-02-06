@@ -9,13 +9,14 @@ using System.Web.UI.WebControls;
 
 public partial class FollowersList : System.Web.UI.Page
 {
+    string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["user"] == null)
         {
             Response.Redirect("LoginPage.aspx");
         }
-        String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+        
         SqlConnection con = new SqlConnection(constr);
         con.Open();
         string que = "select * from Users where UserId in(Select Uid from Friends where FollowingId=" + Session["uid"]+")";
@@ -37,8 +38,9 @@ public partial class FollowersList : System.Web.UI.Page
         //HtmlGenericControl img = new HtmlGenericControl("img");
         Image img = new Image();
         
-        div.Attributes.Add("class", "card mb-5 border-primary w-50 mt-5 p-2 ms-5 ");
-        lable.Attributes.Add("class", "card-header ");
+        div.Attributes.Add("class", "card mb-5 border-primary mt-5 p-2 ms-5 ");
+        div2.Attributes.Add("class", "d-flex");
+        lable.Attributes.Add("class", "align-self-center m-auto h2");
         lable.InnerText = username;
         img.CssClass = "rounded-circle float-start";
         img.ImageUrl = userimg;
@@ -58,8 +60,9 @@ public partial class FollowersList : System.Web.UI.Page
         //    btnLike.CssClass = "btn btn-outline-primary ";
         //    btnLike.Click += new System.EventHandler(btnFollow_click);
         //}
-        div.Controls.Add(img);
-        div.Controls.Add(lable);
+        div2.Controls.Add(img);
+        div2.Controls.Add(lable);
+        div.Controls.Add(div2);
         //div.Controls.Add(btnLike);
         pan_searchlist.Controls.Add(div);
     }
@@ -72,7 +75,7 @@ public partial class FollowersList : System.Web.UI.Page
             string bid = b.ID.Substring(10);
             try
             {
-                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+                
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
                 String que = "insert into Friends(Uid,FollowingId) values(" + Session["uid"] + "," + bid + ")";
@@ -95,7 +98,7 @@ public partial class FollowersList : System.Web.UI.Page
             string bid = b.ID.Substring(10);
             try
             {
-                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+                
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
                 String que = "delete from Friends where uid=" + Session["uid"] + " and FollowingId=" + bid;

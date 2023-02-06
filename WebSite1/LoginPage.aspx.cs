@@ -9,6 +9,7 @@ using System.Data;
 
 public partial class LoginPage : System.Web.UI.Page
 {
+    string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
     protected void Page_Load(object sender, EventArgs e)
     {
         lb_msg.Text = "";
@@ -16,7 +17,7 @@ public partial class LoginPage : System.Web.UI.Page
     }
     protected void btn_login_Click(object sender, EventArgs e)
     {
-        String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
+        
         SqlConnection con = new SqlConnection(constr);
         con.Open();
         String que = "select * from Users where UserName='"+tb_username.Text+"' and Password='"+tb_password.Text+"'";

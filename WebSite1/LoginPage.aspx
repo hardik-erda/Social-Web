@@ -45,19 +45,15 @@
                     <div class="form mb-4">
                       <label class="form-label" for="typeEmailX-2">Username</label>
                       
-                      <asp:TextBox ID="tb_username" runat="server" class="form-control"></asp:TextBox>  
+                      <asp:TextBox ID="tb_username" runat="server" class="form-control" Text="hde"></asp:TextBox>  
                     </div>
 
                     <div class="form mb-4">
                       <label class="form-label" for="typePasswordX-2">Password</label>
-                      <asp:TextBox ID="tb_password" runat="server" class="form-control"></asp:TextBox>  
+                      <asp:TextBox ID="tb_password" runat="server" class="form-control" Text="root1234" TextMode="Password" ></asp:TextBox>  
                     </div>
 
-                    <!-- Checkbox -->
-                    <div class="form-check d-flex justify-content-start mb-5">
-                      <input class="form-check-input" type="checkbox" value="" id="form1Example3" runat="server" />
-                      <label class="form-check-label" for="form1Example3"> Remember password </label>
-                    </div>
+                    
 
                     <asp:button class="btn btn-primary btn-lg btn-block" runat="server" type="submit" id="btn_login" Text="Login" OnClick="btn_login_Click"></asp:button>
          

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 
 public partial class dashboard : System.Web.UI.Page
 {
+    string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["user"] == null)
@@ -16,7 +17,7 @@ public partial class dashboard : System.Web.UI.Page
             Response.Redirect("LoginPage.aspx");
            
         }
-        String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
+        
         SqlConnection con = new SqlConnection(constr);
         con.Open();
         string que = "Select P.Uid,P.Pid,P.PostTitle,P.PostImg,P.PostDes,P.PostLikes,U.UserId,U.UserName from Posts as P,Users as U where P.Uid !=" + Session["Uid"] + "AND U.UserId = P.Uid ORDER BY P.Pid DESC";
@@ -89,7 +90,6 @@ public partial class dashboard : System.Web.UI.Page
             string bid = b.ID.Substring(8);
             try
             {
-                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
                 String que = "update Posts set PostLikes=PostLikes+1 where Pid =" + bid;

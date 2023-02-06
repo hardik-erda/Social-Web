@@ -10,6 +10,7 @@ using System.Text;
 
 public partial class _Default : System.Web.UI.Page
 {
+    string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
     protected void Page_Load(object sender, EventArgs e)
     {
         //use sender obj to check btn click even
@@ -25,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
         }
         lb_pname.Text = Session["user"].ToString();
 
-        String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
+        
         SqlConnection con = new SqlConnection(constr);
         con.Open();
 
@@ -57,9 +58,11 @@ public partial class _Default : System.Web.UI.Page
         while (reader.Read())
         {
             Session["ProfileImg"] = reader["ProfileImg"];
+            Response.Write(Session["ProfileImg"]);
+            img_profile.ImageUrl = reader["ProfileImg"].ToString();
         }
         reader.Close();
-        img_profile.ImageUrl = Session["ProfileImg"].ToString();
+        //img_profile.ImageUrl = Session["ProfileImg"].ToString();
 
         //followers count
 
@@ -131,7 +134,7 @@ public partial class _Default : System.Web.UI.Page
 
         try
         {
-            String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
+           
             SqlConnection con = new SqlConnection(constr);
             con.Open();
             String que = "update Users set UserName=@user where UserId ="+Session["Uid"];
@@ -162,13 +165,12 @@ public partial class _Default : System.Web.UI.Page
 
             try
             {
-                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
                 String que = "update Users set ProfileImg='"+temp_imgurl+"' where UserId =" + Session["Uid"];
                 SqlCommand cmd = new SqlCommand(que, con);
                 cmd.ExecuteNonQuery();
-
+                Response.Redirect("Profile.aspx");
 
             }
             catch(Exception ex)
@@ -187,7 +189,6 @@ public partial class _Default : System.Web.UI.Page
             string bid = b.ID.Substring(8);
             try
             {
-                String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
                 String que = "update Posts set PostLikes=PostLikes+1 where Pid =" + bid;

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 
 public partial class EditProfile : System.Web.UI.Page
 {
+    string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='E:\Sem 6\ASP\WebSite1\WebSite1\App_Data\db_socialMedia.mdf';Integrated Security=True";
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -18,7 +19,6 @@ public partial class EditProfile : System.Web.UI.Page
         try
         {
 
-            String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Sem-6\ASP.NET\CIE_Project\WebSite1\App_Data\Database.mdf;Integrated Security=True";
             SqlConnection con = new SqlConnection(constr);
             con.Open();
             string que = "update Users set UserName='" + tb_editPname.Text + "' where UserName='"+Session["user"]+"'";

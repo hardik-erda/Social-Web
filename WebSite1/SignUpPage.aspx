@@ -49,16 +49,16 @@
 
                     <div class="form mb-4">
                       <label class="form-label" for="typePasswordX-2">Create new Password:</label>
-                      <asp:TextBox ID="tb_password" runat="server" class="form-control"></asp:TextBox>  
+                      <asp:TextBox ID="tb_password" runat="server" class="form-control" TextMode="Password"></asp:TextBox>  
                     </div>
 
                     <div class="form mb-5">
                       <label class="form-label" for="typePasswordX-2">Profile Image:</label>
-                      <asp:FileUpload ID="fu_profile" runat="server"  accept=".png,.jpg,.jpeg,.gif"/>
+                      <asp:FileUpload ID="fu_profile" runat="server"  accept=".png,.jpg,.jpeg,.gif" CssClass="form-control"/>
                     </div>
 
-                    <asp:button class="btn btn-primary btn-lg btn-block" runat="server" type="submit" id="btn_login" Text="Sign Up" OnClick="btn_login_Click"></asp:button>
-                    <asp:Button ID="Button1" runat="server" Text="Button"  OnClick="Button1_Click"/>
+                    <asp:button class="btn btn-primary btn-lg btn-block" runat="server" type="submit" id="btn_signUp" Text="Sign Up" OnClick="btn_signUp_Click"></asp:button>
+                    
                     <div class="mt-4 text-center">
                       <p class="mb-0">Already have an account? <a href="LoginPage.aspx" class="fw-bold" runat="server">Login</a>
                       </p>
